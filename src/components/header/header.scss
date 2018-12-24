@@ -1,0 +1,30 @@
+header {
+    #logo {
+        width: 10em;
+        height: 3em;
+        margin: auto;
+        margin-top: 5%;
+        margin-bottom: 2%;
+    }
+    #rem {
+        margin-bottom: 3%;
+        text-transform: uppercase;
+        margin: auto;
+        text-align: center;
+        letter-spacing: 2px;
+        color: #E44F26;
+        font-size: 1.1em;
+        line-height: 1.5em;
+    }
+    p {
+        margin: auto;
+    }
+    [col-6] {
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 50%;
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        width: 41%;
+        max-width: 46%;
+    }
+}

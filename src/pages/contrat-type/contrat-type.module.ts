@@ -1,15 +1,17 @@
 import { ComponentsModule } from './../../components/components.module';
+import { HeaderComponent } from './../../components/header/header';
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-import { AjouterContratPage } from './ajouter-contrat';
+import { ContratTypePage } from './contrat-type';
 
 @NgModule({
   declarations: [
-    AjouterContratPage,
+    ContratTypePage,
+    
   ],
   imports: [
-    IonicPageModule.forChild(AjouterContratPage),
+    IonicPageModule.forChild(ContratTypePage),
     ComponentsModule.forRoot()
   ],
 })
-export class AjouterContratPageModule {}
+export class ContratTypePageModule {}
