@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { DetailContratPage } from './detail-contrat';
+import { ComponentsModule } from '../../components/components.module';
 
 @NgModule({
   declarations: [
@@ -8,6 +9,7 @@ import { DetailContratPage } from './detail-contrat';
   ],
   imports: [
     IonicPageModule.forChild(DetailContratPage),
+    ComponentsModule.forRoot()
   ],
 })
 export class DetailContratPageModule {}

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the ModifeContratPage page.
+ * Generated class for the DeposerAnnoncePage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,16 +10,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-modife-contrat',
-  templateUrl: 'modife-contrat.html',
+  selector: 'page-deposer-annonce',
+  templateUrl: 'deposer-annonce.html',
 })
-export class ModifeContratPage {
+export class DeposerAnnoncePage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ModifeContratPage');
+    console.log('ionViewDidLoad DeposerAnnoncePage');
   }
 
 }

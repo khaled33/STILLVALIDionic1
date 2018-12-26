@@ -1,3 +1,104 @@
 page-detail-contrat {
+    #logo {
+        width: 10em;
+        height: 3em;
+        margin: auto;
+        margin-top: 5%;
+        margin-bottom: 2%;
+    }
+    #rem {
+        margin: auto;
+        text-align: center;
+        letter-spacing: 2px;
+        color: #E44F26;
+        font-size: 1.1em;
+        line-height: 1.5em;
+    }
+    #divi {
+        margin: auto;
+        width: 70%;
+        text-align: center;
+        margin-bottom: 5%;
+    }
+    .cont {
+        margin-bottom: 5%;
+    }
 
+    .card-header-ios {
+        font-size: 1.6rem;
+        font-weight: 500;
+        color: #333;
+        padding: 9px;
+    }
+    ion-card img {
+        display: block;
+        width: 72%;
+    }
+   #h2{
+      font-size: 124%;
+      margin-top: 2%;
+      text-align: center;
+      color: white;
+   }
+
+#img {
+    border-radius: 100%;
+    overflow: hidden;
+    width: 120px;
+    height: 110px;
+    margin: auto;
+    margin-top: 14%;
+    border: solid 5px;
+    border-color: #0a400a;
+}
+.p{
+    text-align: center;
+    color: black;
+    font-size: 129%;
+}
+
+.tri{
+    border: solid 1px;
+    top: 8%;
+    width: 0%;
+    height: 25%;
+    position: absolute;
+    left: 50%;
+}
+
+.nbMois{
+    position: absolute;
+    left: 59%;
+    top: 8%;
+    color: black;
+}
+#btn-voir{
+    background: #E8461C;
+    margin: auto;
+    padding-right: 20%;
+    padding-left: 20%;
+}
+
+.ColPre{
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 33.33333%;
+    -ms-flex: 0 0 33.33333%;
+    flex: 0 0 33.33333%;
+    width: 32%;
+    max-width: 22%;
+    background: #E8461C;
+    margin-left: 8%;
+    text-align: -webkit-center;
+    border-radius: 13%;
+}
+#p{
+    color: white
+}
+
+.imgAction {
+    display: block;
+    width: 50%;
+    margin-top: 11%;
+    margin-bottom: 1%;
+}
 }
