@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-import { VoirContratPage } from './voir-contrat';
+import { DeposerAnnoncePage } from './deposer-annonce';
 import { ComponentsModule } from '../../components/components.module';
 
 @NgModule({
   declarations: [
-    VoirContratPage,
+    DeposerAnnoncePage,
   ],
   imports: [
-    IonicPageModule.forChild(VoirContratPage),
+    IonicPageModule.forChild(DeposerAnnoncePage),
     ComponentsModule.forRoot()
   ],
 })
-export class VoirContratPageModule {}
+export class DeposerAnnoncePageModule {}
