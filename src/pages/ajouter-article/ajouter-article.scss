@@ -1,4 +1,4 @@
-page-contrat-type {
+page-ajouter-article {
     .mic {
         height: 100%;
         width: 67%;
@@ -21,8 +21,8 @@ page-contrat-type {
     .myrow {
         margin-top: 5%;
     }
-    .select {
-        padding: 13px 8px 13px 16px;
+    .input {
+        padding-left: 2%;
         background-color: #fff;
         max-width: 100%;
         border-radius: 6%;
@@ -35,5 +35,8 @@ page-contrat-type {
     }
     .btn {
         margin-top: 10%;
+    }
+    .footer {
+        margin-top: 20%;
     }
 }

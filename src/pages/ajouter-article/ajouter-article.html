@@ -2,7 +2,7 @@
 
 
 
-    <header [text]="'Ajouter un contrat'"></header>
+    <header [text]="'Ajouter un Article'"></header>
 
 
 
@@ -11,14 +11,13 @@
 
 
         <div class="myspan">
-            <span class="title">Veuillez choisir le type du contrat</span>
+            <span class="title">Veuillez saisir le nom du produit </span><br>
+
         </div>
         <div class="myrow">
             <ion-row>
                 <ion-col col-9>
-                    <ion-select>
-
-                    </ion-select>
+                    <ion-input></ion-input>
                 </ion-col>
                 <ion-col>
                     <div class="mic">
@@ -42,16 +41,34 @@
             </ion-row>
             <ion-row>
                 <ion-col style=" margin-top: auto;" col-3>
-                    <img style="width:3em" src="/assets/imgs/left.png " (click)="Previous()" alt="img ">
+
                 </ion-col>
                 <ion-col style=" text-align: center;">
-                    <button style="color:#FFF;background-color:#E44F26  ;   width: 100%;" (click)="Next()" ion-button round>Valider</button>
+                    <button style="color:#FFF;background-color:#E44F26  ;   width: 100%;" (click)="valider()" ion-button round>Valider</button>
 
                 </ion-col>
                 <ion-col col-3>
 
                 </ion-col>
             </ion-row>
+            <div class="footer">
+                <ion-row>
+                    <ion-col style=" margin-top: auto;" col-1>
+
+                    </ion-col>
+                    <ion-col col-5>
+                        <img style="width:3em" src="/assets/imgs/left.png " (click)="Previous()" alt="img ">
+
+                    </ion-col>
+                    <ion-col col-5 style="text-align: end;">
+                        <img style="width:3em" src="/assets/imgs/right.png " alt="img ">
+
+                    </ion-col>
+                    <ion-col col-1>
+
+                    </ion-col>
+                </ion-row>
+            </div>
         </div>
     </div>
 

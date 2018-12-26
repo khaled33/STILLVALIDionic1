@@ -21,5 +21,7 @@ export class AjouterContratPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad AjouterContratPage');
   }
-
+Previous(){
+  this.navCtrl.pop()
+}
 }

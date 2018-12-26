@@ -2,7 +2,7 @@
 
 
 
-    <header [text]="'Ajouter un contrat'"></header>
+    <header [text]="'Ajouter un Produit'"></header>
 
 
 
@@ -11,14 +11,13 @@
 
 
         <div class="myspan">
-            <span class="title">Veuillez choisir le type du contrat</span>
+            <span class="title">Veuillez choisir la date d'échéance </span><br>
+            <span class="title"> (ex: 01 Janvier 2016) </span>
         </div>
         <div class="myrow">
             <ion-row>
                 <ion-col col-9>
-                    <ion-select>
-
-                    </ion-select>
+                    <ion-datetime displayFormat="MM/DD/YYYY"></ion-datetime>
                 </ion-col>
                 <ion-col>
                     <div class="mic">
