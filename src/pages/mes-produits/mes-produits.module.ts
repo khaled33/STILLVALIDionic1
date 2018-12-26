@@ -1,3 +1,4 @@
+import { ComponentsModule } from './../../components/components.module';
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { MesProduitsPage } from './mes-produits';
@@ -8,6 +9,7 @@ import { MesProduitsPage } from './mes-produits';
   ],
   imports: [
     IonicPageModule.forChild(MesProduitsPage),
+    ComponentsModule.forRoot()
   ],
 })
 export class MesProduitsPageModule {}
