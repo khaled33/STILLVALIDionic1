@@ -1,4 +1,10 @@
-page-contrat-type {
+page-produit-garantie {
+    .input {
+        padding-left: 2%;
+        background-color: #fff;
+        max-width: 100%;
+        border-radius: 6%;
+    }
     .mic {
         height: 100%;
         width: 67%;
@@ -20,12 +26,6 @@ page-contrat-type {
     }
     .myrow {
         margin-top: 5%;
-    }
-    .select {
-        padding: 13px 8px 13px 16px;
-        background-color: #fff;
-        max-width: 100%;
-        border-radius: 6%;
     }
     .title {
         font-size: 16px;

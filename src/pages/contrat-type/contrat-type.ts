@@ -18,11 +18,16 @@ export class ContratTypePage {
   text:any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.text='aaaa'
+   
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ContratTypePage');
   }
-
+  Previous(){
+    this.navCtrl.pop()
+  }
+Next(){
+  this.navCtrl.push('ContratDatePage')
+}
 }

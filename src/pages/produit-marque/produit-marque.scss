@@ -1,17 +1,17 @@
-page-contrat-type {
+page-produit-marque {
     .mic {
         height: 100%;
         width: 67%;
         border-radius: 20%;
         text-align: center;
-        background-color: #fff;
+        background-color: red;
         /* margin: auto; */
     }
     .myicon {
         margin: auto;
         display: block;
         font-size: 2.7em;
-        color: #E44F26;
+        color: #fff;
     }
     .cont {}
     .myspan {
@@ -21,8 +21,8 @@ page-contrat-type {
     .myrow {
         margin-top: 5%;
     }
-    .select {
-        padding: 13px 8px 13px 16px;
+    .input {
+        padding-left: 2%;
         background-color: #fff;
         max-width: 100%;
         border-radius: 6%;

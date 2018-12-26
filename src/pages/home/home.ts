@@ -22,4 +22,15 @@ export class HomePage {
     console.log('ionViewDidLoad HomePage');
   }
 
+  GoToProd(){
+    this.navCtrl.setRoot('MesProduitsPage')
+  }
+  AddProd(){
+    this.navCtrl.setRoot('ProduitPage')
+  }
+  GoToStore(){
+    this.navCtrl.setRoot('MesProduitsPage')
+  }
+
+
 }

@@ -1,5 +1,5 @@
 <ion-content padding style="background: #E8E7E3">
-    <header></header>
+    <header [text]="'Ajouter un Contrat'"></header>
 
 
 
@@ -35,7 +35,7 @@
 
     <ion-row>
         <ion-col style=" margin-top: auto;" col-3>
-            <img style="width:3em" src="/assets/imgs/left.png " alt="img ">
+            <img style="width:3em" src="/assets/imgs/left.png " (click)="Previous()" alt="img ">
         </ion-col>
         <ion-col style=" text-align: center;">
             <button style="color:#FFF;background-color:#E44F26 " ion-button round>Valider</button>
