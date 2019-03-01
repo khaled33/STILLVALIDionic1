@@ -1,16 +1,35 @@
 <ion-content padding style="background: #E8E7E3">
-  <header [text]="'Boutique'"></header>
+    <header [text]="'Boutique'"></header>
 
-  <ion-list>
-    <ion-item>
-      <ion-thumbnail item-start>
-        <img src="/assets/boutique/img.png">
-      </ion-thumbnail>
-      <h3>bonjour</h3>
-      <p>Paris</p>
-      <p>200 £</p>
-    </ion-item>
-  </ion-list>
-  
+    <ion-list>
+        <ion-item *ngFor="let item of data" (click)="GoToAnnonceDetail( item.id, item.categorie, item.description, item.email, item.numtel, item.photoproduit, item.prix, item.titre, item.user_id, item.ville)">
+
+            <ion-thumbnail item-start>
+                <img (load)="dismissLoading()" src="{{item.photoproduit}}">
+            </ion-thumbnail>
+            <ion-row>
+                <ion-col>
+                    <h3>{{item.titre}}</h3>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <p>{{item.ville}}</p>
+                </ion-col>
+                <ion-col no-padding style="text-align: end;" *ngIf="id == item.user_id">
+                    <span> <img  style="max-width: 20%;" src="assets/imgs/settings.png"></span>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <p>{{item.prix}} €</p>
+                </ion-col>
+            </ion-row>
+
+
+
+        </ion-item>
+    </ion-list>
+
 
 </ion-content>

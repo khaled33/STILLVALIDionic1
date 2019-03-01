@@ -1,5 +1,5 @@
 <ion-content padding style="background: #E8E7E3">
-    <header [text]="'Mes Reminders'"></header>
+    <header [text]="'Mes PRODUITS'"></header>
 
     <div class="container">
 
@@ -7,49 +7,31 @@
         <div id="remA">
             <span class="title">Mes Articles</span>
         </div>
+        <ion-slides #slider spaceBetween="10" slidesPerView="3">
 
-        <ion-row>
-            <ion-col>
-                <div class="quote-item">
-                    <em>
-                                        <strong>  20 j </strong>
+
+            <ion-slide *ngFor="let art of MyArticle ; let i index ">
+                <div class="quote-item" *ngIf="art.days < 0">
+                    <em class="myem">
+                                        <strong>  {{art.days}} J </strong>
                                         </em>
                     <div style="width:100px;margin:0 auto;">
-                        <img style="border-radius:100%" src="assets/rem/home_button.png" class="garantie--valid" />
+                        <img (load)="dismissLoading()" (click)="GoToProduitDetail(art.id,art.enseigne,art.marque,art.nom,art.dachat,art.garantie,art.photo,art.facture,art.dfin,art.sav,art.days)" style="border-radius:100%" src="{{art.photo}}" class="garantie--invalid" />
 
 
                         <div class="indice" style="top: 12px;left: 80px;">
                             <a><i class="ion-checkmark" ></i></a>
-                            <!--  <a><i class="ion-close-round" ng-if="!getGarantie(article.dAchat,article.garantie)"></i></a> -->
+
                         </div>
                     </div>
-                    <span><strong class="product--name" >aaa</strong></span>
+                    <span><strong class="product--name" >{{art.nom}}</strong></span>
                 </div>
-            </ion-col>
-            <ion-col>
-                <div class="quote-item">
-                    <em>
-                                <strong>  20 j </strong>
-                                </em>
+                <div class="quote-item" *ngIf="art.days > 0">
+                    <em class="myem0">
+                                        <strong>  {{art.days}} J </strong>
+                                        </em>
                     <div style="width:100px;margin:0 auto;">
-                        <img style="border-radius:100%" src="assets/rem/home_button.png" class="garantie--valid" />
-
-
-                        <div class="indice" style="top: 12px;left: 80px;">
-                            <a><i class="ion-checkmark" ></i></a>
-                            <!--  <a><i class="ion-close-round" ng-if="!getGarantie(article.dAchat,article.garantie)"></i></a> -->
-                        </div>
-                    </div>
-                    <span><strong class="product--name" >aaa</strong></span>
-                </div>
-            </ion-col>
-            <ion-col>
-                <div class="quote-item">
-                    <em>
-                                    <strong>  20 j </strong>
-                                    </em>
-                    <div style="width:100px;margin:0 auto;">
-                        <img style="border-radius:100%" src="assets/rem/home_button.png" class="garantie--valid" />
+                        <img (load)="dismissLoading()" (click)="GoToProduitDetail(art.id,art.enseigne,art.marque,art.nom,art.dachat,art.garantie,art.photo,art.facture,art.dfin,art.sav,art.days)" style="border-radius:100%" src="{{art.photo}}" class="garantie--valid" />
 
 
                         <div class="indice" style="top: 12px;left: 80px;">
@@ -57,58 +39,26 @@
 
                         </div>
                     </div>
-                    <span><strong class="product--name" >aaa</strong></span>
+                    <span><strong class="product--name" >{{art.nom}}</strong></span>
                 </div>
-            </ion-col>
-        </ion-row>
+            </ion-slide>
+
+        </ion-slides>
+
 
 
         <div id="remA">
-            <span class="title">Mon contraits et Abonnement</span>
+            <span class="title">Mes contrats et Abonnement</span>
         </div>
 
-        <ion-row>
-            <ion-col>
-                <div class="quote-item">
-                    <em>
-                                            <strong>  20 j </strong>
-                                            </em>
-                    <div style="width:100px;margin:0 auto;">
-                        <img style="border-radius:100%" src="assets/rem/home_button.png" class="garantie--valid" />
-
-
-                        <div class="indice" style="top: 12px;left: 80px;">
-                            <a><i class="ion-checkmark" ></i></a>
-                            <!--  <a><i class="ion-close-round" ng-if="!getGarantie(article.dAchat,article.garantie)"></i></a> -->
-                        </div>
-                    </div>
-                    <span><strong class="product--name" >aaa</strong></span>
-                </div>
-            </ion-col>
-            <ion-col>
-                <div class="quote-item">
-                    <em>
-                                    <strong>  20 j </strong>
-                                    </em>
-                    <div style="width:100px;margin:0 auto;">
-                        <img style="border-radius:100%" src="assets/rem/home_button.png" class="garantie--valid" />
-
-
-                        <div class="indice" style="top: 12px;left: 80px;">
-                            <a><i class="ion-checkmark" ></i></a>
-                            <!--  <a><i class="ion-close-round" ng-if="!getGarantie(article.dAchat,article.garantie)"></i></a> -->
-                        </div>
-                    </div>
-                    <span><strong class="product--name" >aaa</strong></span>
-                </div>
-            </ion-col>
-            <ion-col>
-                <div class="quote-item">
-                    <em>
-                                        <strong>  20 j </strong>
+        <ion-slides #slider spaceBetween="10" slidesPerView="3">
+            <ion-slide *ngFor="let cont of MyContrat ; let i index ">
+                <div class="quote-item" *ngIf="cont.days < 0">
+                    <em class="myem">
+                                        <strong>  {{cont.days}} J </strong>
                                         </em>
                     <div style="width:100px;margin:0 auto;">
-                        <img style="border-radius:100%" src="assets/rem/home_button.png" class="garantie--valid" />
+                        <img (load)="dismissLoading()" (click)="GoToContratDetail(cont.id,cont.decheance,cont.photo,cont.type ,cont.days)" src="{{cont.photo}}" class="garantie--invalid" />
 
 
                         <div class="indice" style="top: 12px;left: 80px;">
@@ -116,10 +66,28 @@
 
                         </div>
                     </div>
-                    <span><strong class="product--name" >aaa</strong></span>
+                    <span><strong class="product--name" >{{cont.type}}</strong></span>
                 </div>
-            </ion-col>
-        </ion-row>
+                <div class="quote-item" *ngIf="cont.days > 0">
+                    <em class="myem0">
+                                        <strong>  {{cont.days}} J</strong>
+                                        </em>
+                    <div style="width:100px;margin:0 auto;">
+                        <img (load)="dismissLoading()" (click)="GoToContratDetail(cont.id,cont.decheance,cont.photo,cont.type,cont.days)" src="{{cont.photo}}" class="garantie--valid" />
+
+
+                        <div class="indice" style="top: 12px;left: 80px;">
+                            <a><i class="ion-checkmark" ></i></a>
+
+                        </div>
+                    </div>
+                    <span><strong class="product--name" >{{cont.type}}</strong></span>
+                </div>
+            </ion-slide>
+
+
+
+        </ion-slides>
     </div>
 
 

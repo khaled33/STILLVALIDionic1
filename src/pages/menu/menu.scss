@@ -1,0 +1,49 @@
+page-menu {
+    .list-ios {
+        margin: 0px;
+    }
+    ion-icon {
+        &[class*="fn-"] {
+            -webkit-mask-size: contain;
+            -webkit-mask-position: 50% 50%;
+            -webkit-mask-repeat: no-repeat;
+            background: currentColor;
+            width: 1em;
+            height: 1em;
+        }
+        &[class*="fn-rem"] {
+            -webkit-mask-image: url(../../assets/imgs/fleches.png);
+        }
+        &[class*="fn-dollar"] {
+            -webkit-mask-image: url(../../assets/imgs/dollar.png);
+        }
+        &[class*="fn-logout"] {
+            -webkit-mask-image: url(../../assets/imgs/door_exit.png);
+        }
+        &[class*="fn-plus"] {
+            -webkit-mask-image: url(../../assets/imgs/plus.png);
+        }
+    }
+    .item .text-ios-orange {
+        color: #E44F26;
+        text-transform: uppercase;
+        font-size: 0.8em;
+        margin: auto;
+    }
+    .list-ios>.item-block:first-child {
+        border-top: 7px solid #E44F26;
+    }
+    .popover-ios .popover-arrow ::after {
+        left: 3px;
+        top: 3px;
+        border-radius: 3px;
+        position: absolute;
+        z-index: 10;
+        width: 14px;
+        height: 14px;
+        background-color: #e44f26;
+        content: "";
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+}

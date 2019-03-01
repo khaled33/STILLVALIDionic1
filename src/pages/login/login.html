@@ -8,27 +8,34 @@
 <ion-content padding style="background: #E8E7E3">
 
     <ion-row>
+        <!-- <img id="logo" src="assets/login/logo.png" alt=""> -->
+
         <img id="logo" src="assets/login/logo.png" alt="">
+
+
+
     </ion-row>
+    <form (ngSubmit)="login()" [formGroup]="signinForm">
 
+        <ion-list>
 
-    <ion-list>
+            <ion-item>
+                <ion-input type="email" placeholder="Email" [(ngModel)]="email" formControlName="email"></ion-input>
+            </ion-item>
 
-        <ion-item>
-            <ion-input type="email" placeholder="Email"></ion-input>
-        </ion-item>
+            <ion-item>
+                <ion-input type="password" placeholder=" Mot de Passe" [(ngModel)]="password" formControlName="password"></ion-input>
+            </ion-item>
+            <br><br>
+        </ion-list>
 
-        <ion-item>
-            <ion-input type="password" placeholder=" Mot de Passe"></ion-input>
-        </ion-item>
+        <ion-row>
+            <button ion-button class="btn-valider" round type="submit" [disabled]="signinForm.invalid">Valider</button>
+        </ion-row>
         <br><br>
-    </ion-list>
 
-    <ion-row>
-        <button ion-button class="btn-valider" (click)="login()" round>Valider</button>
-    </ion-row>
-    <br><br>
 
+    </form>
     <ion-row>
         <button ion-button class="btn-valider" id="creecompte" (click)="register()" round>Céer un compte</button>
     </ion-row>

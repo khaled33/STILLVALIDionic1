@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { PopoverController, NavController } from 'ionic-angular';
 
 
 /**
@@ -15,12 +16,22 @@ export class HeaderComponent {
 
   @Input() text: string;
 
-  constructor() {
+  constructor(public navCtrl:NavController,public popoverCtrl:PopoverController) {
     console.log('Hello HeaderComponent Component');
     
   }
 
   ngOnInit() {
   }
+  presentMenu(myEvent) {
+    console.log(myEvent);
+    let popover = this.popoverCtrl.create('MenuPage');
+    popover.present({
+      ev: myEvent
+    });
+  }
 
+  GoHome(){
+    this.navCtrl.setRoot('HomePage');
+  }
 }

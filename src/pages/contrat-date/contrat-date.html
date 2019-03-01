@@ -14,44 +14,49 @@
             <span class="title">Veuillez choisir la date d'échéance </span><br>
             <span class="title"> (ex: 01 Janvier 2016) </span>
         </div>
-        <div class="myrow">
-            <ion-row>
-                <ion-col col-9>
-                    <ion-datetime displayFormat="MM/DD/YYYY"></ion-datetime>
-                </ion-col>
-                <ion-col>
-                    <div class="mic">
-                        <ion-icon class="myicon" name="mic"></ion-icon>
-                    </div>
-                </ion-col>
-            </ion-row>
-        </div>
-        <div class="btn">
-            <ion-row>
-                <ion-col col-3>
+        <form (ngSubmit)="AddPic()" [formGroup]="dateForm">
+            <div class="myrow">
+                <ion-row>
+                    <ion-col col-9>
+                        <ion-datetime pickerFormat="DD MMMM YYYY" monthNames='janvier,février, mars, avril, mai, juin, juillet,août,septembre,octobre,novembre,décembre' displayFormat="DD MMMM YYYY" [(ngModel)]="date" formControlName="date"></ion-datetime>
+                    </ion-col>
+                    <ion-col>
+                        <div class="mic" *ngIf="!isRecording">
+                            <ion-icon (click)="startListening()" class="myicon" name="mic"></ion-icon>
+                        </div>
+                        <div class="mic0" *ngIf="isRecording">
+                            <ion-icon (click)="stopListening()" class="myicon0" name="mic"></ion-icon>
+                        </div>
+                    </ion-col>
+                </ion-row>
+            </div>
+            <div class="btn">
+                <ion-row>
+                    <ion-col col-3>
 
-                </ion-col>
-                <ion-col style=" text-align: center;">
-                    <button style="color:#FFF;background-color:#6d6864;    width: 100%; " ion-button round>Effacer</button>
+                    </ion-col>
+                    <ion-col style=" text-align: center;">
+                        <button style="color:#FFF;background-color:#6d6864;    width: 100%; " [disabled]="!date" type="reset" ion-button round>Effacer</button>
 
-                </ion-col>
-                <ion-col col-3>
+                    </ion-col>
+                    <ion-col col-3>
 
-                </ion-col>
-            </ion-row>
-            <ion-row>
-                <ion-col style=" margin-top: auto;" col-3>
-                    <img style="width:3em" src="assets/imgs/left.png " (click)="Previous()" alt="img ">
-                </ion-col>
-                <ion-col style=" text-align: center;">
-                    <button style="color:#FFF;background-color:#E44F26  ;   width: 100%;" (click)="AddPic()" ion-button round>Valider</button>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col style=" margin-top: auto;" col-3>
+                        <img style="width:3em" src="assets/imgs/left.png " (click)="Previous()" alt="img ">
+                    </ion-col>
+                    <ion-col style=" text-align: center;">
+                        <button style="color:#FFF;background-color:#E44F26  ;   width: 100%;" [disabled]="dateForm.invalid" ion-button round>Valider</button>
 
-                </ion-col>
-                <ion-col col-3>
+                    </ion-col>
+                    <ion-col col-3>
 
-                </ion-col>
-            </ion-row>
-        </div>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </form>
     </div>
 
 

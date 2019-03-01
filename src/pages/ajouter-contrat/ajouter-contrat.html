@@ -11,21 +11,24 @@
         <ion-row>
             <div id="divi">
                 <p style="font-size: 16px;  color: #646569;"> Prendre une photo du <strong>Contrat</strong></p>
-
-                <img style="width: 8em" src="assets/imgs/camera.png " alt="img ">
+                <button [disabled]="IsEnable" (click)="takePicture()" no-padding>
+                <img   style="width: 8em" src="assets/imgs/camera.png " alt="img ">
+          
+            </button>
             </div>
         </ion-row>
         <ion-row>
             <div id="divi">
                 <p style="font-size: 16px;  color: #646569;">Importer une photo du <strong>Contrat</strong></p>
-
-                <img style="width: 8em" src="assets/imgs/camera.png " alt="img ">
+                <button [disabled]="IsEnable" (click)=" getPicture() " no-padding>
+                <img style="width: 8em" src="assets/imgs/camera.png "  alt="img ">
+            </button>
             </div>
         </ion-row>
 
         <ion-row style="display: block;margin: auto;">
             <span style="font-style:italic; color: #311614; font-size: 1.1em;padding-top:10px;text-align:center;display:block;">
-        Il vous reste <strong>10</strong> photos à télécharger
+        Il vous reste <strong>{{i}}</strong> photos à télécharger
         </span>
         </ion-row>
 
@@ -38,13 +41,14 @@
             <img style="width:3em" src="assets/imgs/left.png " (click)="Previous()" alt="img ">
         </ion-col>
         <ion-col style=" text-align: center;">
-            <button style="color:#FFF;background-color:#E44F26 " ion-button round>Valider</button>
+            <button style="color:#FFF;background-color:#E44F26 " ion-button round (click)="Next()">Valider</button>
 
         </ion-col>
         <ion-col col-3>
 
         </ion-col>
     </ion-row>
+
 
 
 </ion-content>

@@ -12,22 +12,22 @@
             <div id="divi">
                 <p style="font-size: 16px;  color: #646569;"> Prendre une photo pour l'<strong>Article</strong></p>
 
-                <img style="width: 8em" src="assets/imgs/camera.png " alt="img ">
+                <img (click)=" takePictureArticle()" style="width: 8em" src="assets/imgs/camera.png " alt="img ">
             </div>
         </ion-row>
         <ion-row>
             <div id="divi">
-                <p style="font-size: 16px;  color: #646569;"> Prendre une photo de la<strong>Facture</strong></p>
+                <p style="font-size: 16px;  color: #646569;"> Prendre une photo de la <strong>Facture</strong></p>
 
-                <img style="width: 8em" src="assets/imgs/camera.png " alt="img ">
+                <img (click)="takePictureFacture()" style="width: 8em" src="assets/imgs/camera.png " alt="img ">
             </div>
         </ion-row>
 
-        <ion-row style="display: block;margin: auto;">
+        <!-- <ion-row style="display: block;margin: auto;">
             <span style="font-style:italic; color: #311614; font-size: 1.1em;padding-top:10px;text-align:center;display:block;">
         Il vous reste <strong>10</strong> photos à télécharger
         </span>
-        </ion-row>
+        </ion-row> -->
 
 
 
@@ -38,7 +38,7 @@
             <img style="width:3em" src="assets/imgs/left.png " (click)="Previous()" alt="img ">
         </ion-col>
         <ion-col style=" text-align: center;">
-            <button style="color:#FFF;background-color:#E44F26 " ion-button round>Valider</button>
+            <button style="color:#FFF;background-color:#E44F26 " (click)="Next()" ion-button round>Valider</button>
 
         </ion-col>
         <ion-col col-3>

@@ -1,6 +1,7 @@
+import { MarquesProvider } from './../../providers/marques/marques';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { FormGroup, FormBuilder,Validators } from '@angular/forms';
 /**
  * Generated class for the ContratMarquePage page.
  *
@@ -14,17 +15,39 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'produit-marque.html',
 })
 export class ProduitMarquePage {
+  marqueForm:FormGroup;
+  marque:any;
+  ens:any;
+  data:any;
+  libelle:any;
+  sav:any;
+  constructor(public Services:MarquesProvider,public navCtrl: NavController, public navParams: NavParams, public formBuilder:FormBuilder) {
+this.marque={id:"",libelle:"",sav:"",soutien:""}
+    this.marqueForm = this.formBuilder.group({
+      marque: ['']
+    });
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+
+    this.Services.getMarques().then(res=>{
+      this.data=res;
+     
+      console.log(this.data)
+     
+    });
+
+  
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ContratMarquePage');
   }
   Previous(){
-    this.navCtrl.pop()
+    this.navCtrl.setRoot('ProduitEnseignePage')
   }
   Next(){
-    this.navCtrl.push('AjouterArticlePage')
+    this.navCtrl.setRoot('AjouterArticlePage')
+    localStorage.setItem("sav",this.marque.sav)
+    localStorage.setItem("libelle",this.marque.libelle)
   }
 }

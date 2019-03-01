@@ -14,47 +14,49 @@
             <span class="title">Veuillez choisir la marque</span><br>
 
         </div>
-        <div class="myrow">
-            <ion-row>
-                <ion-col col-9>
-                    <ion-input></ion-input>
-                </ion-col>
-                <ion-col>
-                    <div class="mic">
-                        <ion-icon class="myicon" name="mic"></ion-icon>
-                    </div>
-                </ion-col>
-            </ion-row>
-        </div>
-        <div class="btn">
-            <ion-row>
-                <ion-col col-3>
+        <form (ngSubmit)="Next()" [formGroup]="marqueForm">
+            <div class="myrow">
+                <ion-row>
+                    <ion-col col-9>
+                        <ion-select multiple="false" [(ngModel)]="marque" name="type" formControlName="marque">
+                            <ion-option *ngFor=" let item of data; let i=index " [value]="{libelle:item.libelle,sav:item.sav}" item-end>{{item.libelle}}</ion-option>
+                        </ion-select>
+                    </ion-col>
+                    <ion-col>
+                        <div class="mic">
+                            <ion-icon class="myicon" name="mic"></ion-icon>
+                        </div>
+                    </ion-col>
+                </ion-row>
+            </div>
+            <div class="btn">
+                <ion-row>
+                    <ion-col col-3>
 
-                </ion-col>
-                <ion-col style=" text-align: center;">
-                    <button style="color:#FFF;background-color:#6d6864;    width: 100%; " ion-button round>Effacer</button>
+                    </ion-col>
+                    <ion-col style=" text-align: center;">
+                        <button style="color:#FFF;background-color:#6d6864;width: 100%; " [disabled]="!marque" type="reset" ion-button round>Effacer</button>
 
-                </ion-col>
-                <ion-col col-3>
+                    </ion-col>
+                    <ion-col col-3>
 
-                </ion-col>
-            </ion-row>
-            <ion-row>
-                <ion-col style=" margin-top: auto;" col-3>
-                    <img style="width:3em" src="assets/imgs/left.png " (click)="Previous()" alt="img ">
-                </ion-col>
-                <ion-col style=" text-align: center;">
-                    <button style="color:#FFF;background-color:#E44F26  ;   width: 100%;" (click)="Next()" ion-button round>Valider</button>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col style=" margin-top: auto;" col-3>
+                        <img style="width:3em" src="assets/imgs/left.png " (click)="Previous()" alt="img ">
+                    </ion-col>
+                    <ion-col style=" text-align: center;">
+                        <button style="color:#FFF;background-color:#E44F26 ;width: 100%;" [disabled]="marqueForm.invalid" type="submit" (click)="Next()" ion-button round>Valider</button>
 
-                </ion-col>
-                <ion-col col-3>
+                    </ion-col>
+                    <ion-col col-3>
 
-                </ion-col>
-            </ion-row>
-        </div>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </form>
     </div>
-
-
 
 
 </ion-content>

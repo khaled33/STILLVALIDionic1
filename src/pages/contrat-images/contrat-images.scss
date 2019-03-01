@@ -1,0 +1,25 @@
+page-contrat-images {
+    .close {
+        text-align: end;
+        color: #E44F26;
+        font-weight: bold;
+        font-size: x-large;
+    }
+    .fact {
+        font-weight: bold;
+        color: #E44F26;
+        font-size: x-large;
+    }
+    .content-ios hr {
+        padding: 0;
+        height: 2px;
+        background-color: #e44f26;
+    }
+    ion-app.ios [padding] {
+        padding: 10px;
+    }
+    .pic {
+        padding: 10px;
+        position: relative;
+    }
+}

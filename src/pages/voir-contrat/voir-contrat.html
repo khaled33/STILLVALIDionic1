@@ -8,36 +8,36 @@
 
 <ion-content padding style="background: #E8E7E3">
     <header></header>
-  
-    <ion-row style="background: white ;border-radius: 29px;" >
-      <ion-col >
-        <img src="../../assets/detilproduit/tel.jpeg" id="img">
-      </ion-col>
-  
-      <ion-list >
-        <ion-item >
-          <ion-label >Type de contrat</ion-label>
-          <ion-input type="text" ></ion-input>
-        </ion-item>
-      
-        <ion-item>
-          <ion-label fixed>Date d'echéance</ion-label>
-          <ion-input type="text" ></ion-input>
-        </ion-item>
-  
-      </ion-list>
-  
-      <ion-row>
-          <ion-col  col-6>
-              <button ion-button color="dark" clear icon-start>
+
+    <div style="background: white ;border-radius: 29px;    text-align: center;">
+
+        <img src="{{photoC}}" id="img">
+
+
+        <ion-list>
+            <ion-item>
+                <ion-label>Type de contrat</ion-label>
+                <ion-input [(ngModel)]="type" type="text"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label>Date d'echéance</ion-label>
+                <ion-input [(ngModel)]="decheance" type="text"></ion-input>
+            </ion-item>
+
+        </ion-list>
+
+        <ion-row>
+            <ion-col style="text-align:center;">
+                <button (click)=" goToModif()" ion-button color="dark" clear icon-start>
                   <ion-icon ios="ios-add" color="danger"  >
                   </ion-icon>
                   Modifier Photo(s)Contrat
               </button>
-          </ion-col>         
-           
-     <button ion-button id="btn-valider" round>Valider</button>        
-      </ion-row><br>
-    </ion-row>
-  </ion-content>
-  
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <button ion-button id="btn-valider" (click)=" ModifContrat()" round>Valider</button>
+        </ion-row><br>
+    </div>
+</ion-content>

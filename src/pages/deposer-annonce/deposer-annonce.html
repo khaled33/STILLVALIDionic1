@@ -6,43 +6,86 @@
 -->
 <ion-content padding style="background: #E8E7E3">
     <header></header>
-<br>
+    <br>
     <ion-row>
-      <br>
-      <p>Déposer une annonce</p>
-    </ion-row>  
+        <br>
+        <p>Déposer une annonce</p>
+    </ion-row>
     <hr>
     <p>photo Produit :</p>
 
     <ion-row>
-      <img src="../../assets/detilproduit/tel.jpeg" id="img" alt="">
+        <img src="{{photo}}" id="img" alt="">
     </ion-row>
     <br>
     <ion-row>
-      <p>Catégorie :</p>
+        <p>Catégorie :</p>
 
-      <ion-item>
-          <ion-label>Choissisez une catégorie</ion-label>
-          <ion-select [(ngModel)]="gender">
-            <ion-option value="f">Female</ion-option>
-            <ion-option value="m">Male</ion-option>
-          </ion-select>
+        <ion-item>
+            <ion-label>Choissisez une catégorie</ion-label>
+            <ion-select multiple="false" [(ngModel)]="categori">
+                <ion-option *ngFor=" let item of data; let i=index " [value]="item.libelle" item-end>{{item.libelle}}</ion-option>
+            </ion-select>
         </ion-item>
     </ion-row>
-<br>
+    <br>
     <ion-row>
         <p>Titre de l'annonce :</p>
     </ion-row>
     <ion-row>
-        <ion-input type="text" placeholder="Titre de l'annonce" id="imput-annonce"></ion-input>
+        <ion-input [(ngModel)]="titre" type="text" placeholder="Titre de l'annonce" id="imput-annonce"></ion-input>
     </ion-row>
 
     <ion-row>
-        <p>Titre de l'annonce :</p>
+        <p>Description de l'annonce :</p>
     </ion-row>
     <ion-row>
-        <ion-input type="text" placeholder="Titre de l'annonce" id="imput-annonce"></ion-input>
+        <ion-input [(ngModel)]="desc" type="text" placeholder="Description de l'annonce " id="imput-annonce"></ion-input>
+    </ion-row>
+    <ion-row>
+        <p>Prix :</p>
+    </ion-row>
+    <ion-row>
+        <ion-input [(ngModel)]="prix" type="number" placeholder="Prix" id="imput-annonce"></ion-input>
     </ion-row>
 
+    <ion-row>
+        <p>Ville:</p>
+    </ion-row>
+    <ion-row style="    margin-bottom: 3%;">
+        <ion-input [(ngModel)]="ville" type="text" placeholder="Ville" id="imput-annonce"></ion-input>
+    </ion-row>
+
+    <ion-row style="background-color: #fff; margin-bottom: 10px;">
+        <ion-col col-2 style="margin:auto">
+            <p>Mail</p>
+        </ion-col>
+        <ion-col>
+            <ion-item no-line radio-group>
+                <ion-label>{{MyEmail}}</ion-label>
+                <ion-radio (ionSelect)="email($event)" checked={{isChecked}} value="{{MyEmail}}"></ion-radio>
+            </ion-item>
+        </ion-col>
+
+    </ion-row>
+    <ion-row style="background-color: #fff;">
+        <ion-col col-2 style="margin:auto">
+            <p>Tel</p>
+        </ion-col>
+        <ion-col>
+            <ion-input [(ngModel)]="tel" type="number" id="imput-annonce"></ion-input>
+        </ion-col>
+
+    </ion-row>
+    <ion-row>
+        <ion-col col-6>
+            <button style="color:#FFF;background-color:#E44F26  ;   width: 100%;" type="submit" (click)="UploadAnnonce()" ion-button round>Valider</button>
+        </ion-col>
+        <ion-col col-6>
+            <button style="color:#FFF;background-color:#6d6864;    width: 100%; " type="reset" ion-button round>Effacer</button>
+
+        </ion-col>
+
+    </ion-row>
 
 </ion-content>

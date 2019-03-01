@@ -4,14 +4,20 @@ page-produit-marque {
         width: 67%;
         border-radius: 20%;
         text-align: center;
-        background-color: red;
+        background-color: #fff;
         /* margin: auto; */
     }
     .myicon {
         margin: auto;
         display: block;
         font-size: 2.7em;
-        color: #fff;
+        color: #E44F26;
+    }
+    .select {
+        padding: 13px 8px 13px 16px;
+        background-color: #fff;
+        max-width: 100%;
+        border-radius: 6%;
     }
     .cont {}
     .myspan {

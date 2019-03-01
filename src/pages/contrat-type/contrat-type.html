@@ -13,46 +13,48 @@
         <div class="myspan">
             <span class="title">Veuillez choisir le type du contrat</span>
         </div>
-        <div class="myrow">
-            <ion-row>
-                <ion-col col-9>
-                    <ion-select>
+        <form (ngSubmit)="Next()" [formGroup]="typeForm">
+            <div class="myrow">
+                <ion-row>
+                    <ion-col col-9>
+                        <ion-select multiple="false" [(ngModel)]="type" name="type" formControlName="type">
+                            <ion-option *ngFor=" let item of data; let i=index " [value]="item.libelle " item-end>{{item.libelle}}</ion-option>
+                        </ion-select>
+                    </ion-col>
+                    <ion-col>
+                        <div class="mic">
+                            <ion-icon class="myicon" name="mic"></ion-icon>
+                        </div>
+                    </ion-col>
+                </ion-row>
+            </div>
+            <div class="btn">
+                <ion-row>
+                    <ion-col col-3>
 
-                    </ion-select>
-                </ion-col>
-                <ion-col>
-                    <div class="mic">
-                        <ion-icon class="myicon" name="mic"></ion-icon>
-                    </div>
-                </ion-col>
-            </ion-row>
-        </div>
-        <div class="btn">
-            <ion-row>
-                <ion-col col-3>
+                    </ion-col>
+                    <ion-col style=" text-align: center;">
+                        <button style="color:#FFF;background-color:#6d6864;    width: 100%; " [disabled]="!type" type="reset" ion-button round>Effacer</button>
 
-                </ion-col>
-                <ion-col style=" text-align: center;">
-                    <button style="color:#FFF;background-color:#6d6864;    width: 100%; " ion-button round>Effacer</button>
+                    </ion-col>
+                    <ion-col col-3>
 
-                </ion-col>
-                <ion-col col-3>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col style=" margin-top: auto;" col-3>
+                        <img style="width:3em" src="assets/imgs/left.png " (click)="Previous()" alt="img ">
+                    </ion-col>
+                    <ion-col style=" text-align: center;">
+                        <button style="color:#FFF;background-color:#E44F26  ;   width: 100%;" type="submit" [disabled]="typeForm.invalid" ion-button round>Valider</button>
 
-                </ion-col>
-            </ion-row>
-            <ion-row>
-                <ion-col style=" margin-top: auto;" col-3>
-                    <img style="width:3em" src="assets/imgs/left.png " (click)="Previous()" alt="img ">
-                </ion-col>
-                <ion-col style=" text-align: center;">
-                    <button style="color:#FFF;background-color:#E44F26  ;   width: 100%;" (click)="Next()" ion-button round>Valider</button>
+                    </ion-col>
+                    <ion-col col-3>
 
-                </ion-col>
-                <ion-col col-3>
-
-                </ion-col>
-            </ion-row>
-        </div>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </form>
     </div>
 
 

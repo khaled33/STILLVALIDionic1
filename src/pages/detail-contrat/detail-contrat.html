@@ -11,41 +11,44 @@
     <header></header>
 
 
-        <ion-card >           
-            <ion-card-header style="background:#E44F26">
-              <ion-row>
-                <ion-col col-4 ></ion-col>
-                <ion-col col-4 > <h2 id="h2">Television </h2></ion-col>
-                <ion-col col-2 ></ion-col>
-                <ion-col col-2 > <img src="../../assets/detilproduit/menu.svg " end /></ion-col>
-              </ion-row>                 
-            </ion-card-header>
-            <ion-card-content> 
-                  <ion-item>
-                   
-                    <ion-avatar >
-                      
-                      <img src="../../assets/detilproduit/tel.jpeg" id="img">
+    <ion-card>
+        <ion-card-header style="background:#E44F26">
+            <ion-row>
+                <ion-col col-4></ion-col>
+                <ion-col col-4>
+                    <h2 id="h2">Fiche Contrat </h2>
+                </ion-col>
+                <ion-col col-2></ion-col>
+                <ion-col col-2> <img (click)="presentMenu($event)" src="assets/detilproduit/menu.svg " end /></ion-col>
+            </ion-row>
+        </ion-card-header>
+        <ion-card-content>
+            <ion-item>
 
-                    </ion-avatar> 
-                    </ion-item>
-                 </ion-card-content>
-                 <div>
-                   <b>
-                      <p class="p">ASSURANCE SANTE</p>
-                    <p class="p">2017-03-19</p>
+                <ion-avatar>
+
+                    <img *ngIf="days > 0" src="{{photo}}" id="img">
+                    <img *ngIf="days < 0" src="{{photo}}" id="img0">
+
+                </ion-avatar>
+            </ion-item>
+        </ion-card-content>
+        <div>
+            <b>
+                      <p class="p">{{type}}</p>
+                    <p class="p">{{decheance}}</p>
                     
                   </b>
-                </div><br>
-                <ion-row> 
-                    <button ion-button id="btn-voir" round>Voir facture</button>
-                  </ion-row>
-                  <ion-row> 
-                    <br>
-                    </ion-row>
-                <br>
-          </ion-card>
-          <img src="../../assets/detilproduit/left.png" style=" width: 15%; margin-top: 17px; margin-bottom: -8px;
+        </div><br>
+        <ion-row>
+            <button ion-button id="btn-voir" round (click)="GoToPhotos()">Voir le contrat</button>
+        </ion-row>
+        <ion-row>
+            <br>
+        </ion-row>
+        <br>
+    </ion-card>
+    <img (click)="pop()" src="assets/detilproduit/left.png" style=" width: 15%; margin-top: 17px; margin-bottom: -8px;
       " class="imgAction">
 
 

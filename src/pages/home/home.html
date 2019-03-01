@@ -29,7 +29,7 @@
         </ion-col>
 
         <ion-col col-4>
-            <img src="assets/home/botique.png" class="icon-munu" alt="">
+            <img src="assets/home/botique.png" (click)="Boutique()" class="icon-munu" alt="">
             <p>Botique</p>
 
         </ion-col>
@@ -45,7 +45,7 @@
     <ion-row style="margin-top: 25%; ">
         <ion-col col-3></ion-col>
         <ion-col col-2>
-            <img src="assets/home/twiter.png" class="icon-resau" alt="">
+            <img (click)="UploadContrat()" src="assets/home/twiter.png" class="icon-resau" alt="">
 
         </ion-col>
 
@@ -64,4 +64,18 @@
 
 
     </ion-row>
+
+
+    <ion-row style="margin-top: 5%;">
+        <ion-col style="text-align: center;">
+            <p style="color: #343434;"> Copyright StillVALID</p>
+        </ion-col>
+    </ion-row>
+    <ion-row style="margin-top: -5%;">
+        <ion-col style="text-align: center;">
+            <p style="color: #343434;"> All Rights Reserved - {{date}} </p>
+        </ion-col>
+    </ion-row>
+
+
 </ion-content>

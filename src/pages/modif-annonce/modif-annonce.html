@@ -1,0 +1,67 @@
+<!--
+  Generated template for the DeposerAnnoncePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-content padding style="background: #E8E7E3">
+    <div class="mydiv">
+
+        <ion-row>
+            <img src="{{photoproduit}}" id="img" alt="">
+        </ion-row>
+        <br>
+
+        <ion-list>
+
+            <ion-item>
+                <ion-label>Catégorie</ion-label>
+                <ion-select multiple="false" [(ngModel)]="categorie">
+                    <ion-option *ngFor=" let item of data; let i=index " [value]="item.libelle" item-end>{{item.libelle}}</ion-option>
+                </ion-select>
+            </ion-item>
+
+            <br>
+
+
+            <ion-item>
+                <ion-label fixed>Titre</ion-label>
+                <ion-input [(ngModel)]="titre" type="text" id="imput-annonce"></ion-input>
+            </ion-item>
+
+
+
+            <ion-item>
+                <ion-label fixed>Description</ion-label>
+                <ion-input [(ngModel)]="description" type="text" id="imput-annonce"></ion-input>
+            </ion-item>
+
+
+            <ion-item>
+                <ion-label fixed>Prix</ion-label>
+                <ion-input [(ngModel)]="prix" type="number" id="imput-annonce"></ion-input>
+            </ion-item>
+
+
+            <ion-item>
+                <ion-label fixed>Ville</ion-label>
+                <ion-input [(ngModel)]="ville" type="text" id="imput-annonce"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label fixed>Tel</ion-label>
+                <ion-input [(ngModel)]="numtel" type="text" id="imput-annonce"></ion-input>
+            </ion-item>
+        </ion-list>
+
+
+        <ion-row>
+            <ion-col style="text-align: center">
+                <button style="color:#FFF;background-color:#E44F26  ;   width: 50%;" type="submit" (click)="ModifAnnonce()" ion-button round>Valider</button>
+            </ion-col>
+
+
+        </ion-row>
+
+    </div>
+</ion-content>

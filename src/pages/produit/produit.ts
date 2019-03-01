@@ -22,9 +22,9 @@ export class ProduitPage {
     console.log('ionViewDidLoad ProduitPage');
   }
   AddCont(){
-    this.navCtrl.push('ContratTypePage')
+    this.navCtrl.setRoot('ContratTypePage')
   }
   AddProd(){
-    this.navCtrl.push('ProduitEnseignePage')
+    this.navCtrl.setRoot('ProduitEnseignePage')
   }
 }

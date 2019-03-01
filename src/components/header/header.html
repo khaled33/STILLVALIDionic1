@@ -9,7 +9,7 @@
     <ion-col col-6>
         <div style="float: right;
         display: table;    text-align: center;">
-            <img style=" width: 3em;" src="assets/rem/home_button.png">
+            <img style=" width: 3em;" (click)="GoHome()" src="assets/rem/home_button.png">
             <p>Acceil</p>
 
         </div>
@@ -21,7 +21,7 @@
 
         <div style="
         display: table;    text-align: center;">
-            <img style="width: 3em;" src="assets/rem/menu_button.png ">
+            <img (click)="presentMenu($event)" style="width: 3em;" src="assets/rem/menu_button.png ">
             <p>menu</p>
         </div>
 

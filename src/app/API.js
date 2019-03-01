@@ -1,0 +1,1 @@
+export const apiurl = 'http://13.80.41.22/stillvalid/StillValid/web/app_dev.php/'

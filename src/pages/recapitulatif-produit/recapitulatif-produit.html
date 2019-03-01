@@ -1,0 +1,78 @@
+<ion-content padding style="background: #E8E7E3">
+    <header [text]="'Ajouter produit'"></header>
+
+
+    <div class="cont">
+
+        <span no-padding>Récapitulatif</span>
+        <hr>
+        <div>
+
+            <ion-label>Enseigne :</ion-label>
+            <ion-item>
+
+                <ion-input type="text" value="" [disabled]="CantEditE" [(ngModel)]="enseigne"></ion-input>
+                <img width="8%" (click)="EditE()" src="assets/imgs/edites.svg" item-end>
+            </ion-item>
+
+
+            <ion-label>Marque:</ion-label>
+            <ion-item>
+
+                <ion-select multiple="false" [(ngModel)]="Marque">
+                    <ion-option *ngFor=" let item of data; let i=index " [value]="item.libelle" item-end>{{item.libelle}}</ion-option>
+                </ion-select>
+                <img width="8%" (click)="EditM()" src="assets/imgs/edites.svg" item-end>
+            </ion-item>
+
+            <ion-label>Produit:</ion-label>
+            <ion-item>
+
+                <ion-input type="text" value="" [disabled]="CantEditP" [(ngModel)]="Produit"></ion-input>
+                <img width="8%" (click)="EditP()" src="assets/imgs/edites.svg" item-end>
+            </ion-item>
+
+
+            <ion-label>Date d'achat:</ion-label>
+            <ion-item>
+
+                <ion-datetime pickerFormat="DD MMMM YYYY" monthNames='janvier,février, mars, avril, mai, juin, juillet,août,septembre,octobre,novembre,décembre' displayFormat="DD MMMM YYYY" [(ngModel)]="date"></ion-datetime>
+                <img width="8%" (click)="EditD()" src="assets/imgs/edites.svg" item-end>
+            </ion-item>
+
+
+            <ion-label>Durée de la garantie:</ion-label>
+            <ion-item>
+
+                <ion-input type="text" value="" [disabled]="CantEditDu" [(ngModel)]="duree"></ion-input>
+                <img width="8%" (click)="EditDu()" src="assets/imgs/edites.svg" item-end>
+            </ion-item>
+
+
+            <ion-label>Photos:</ion-label>
+            <ion-item>
+
+                <ion-input type="text" value="" [disabled]="CantEdit" placeholder="Photo(S) Produit:" [(ngModel)]="FacturePic"></ion-input>
+                <img width="8%" src="assets/imgs/edites.svg" item-end>
+            </ion-item>
+        </div>
+
+
+    </div>
+
+
+    <ion-row>
+        <ion-col style=" margin-top: auto;" col-3>
+            <img style="width:3em" src="assets/imgs/left.png " (click)="Previous()" alt="img ">
+        </ion-col>
+        <ion-col style=" text-align: center;">
+            <button style="color:#FFF;background-color:#E44F26 " (click)="UploadArticle()" ion-button round>Valider</button>
+
+        </ion-col>
+        <ion-col col-3>
+
+        </ion-col>
+    </ion-row>
+
+
+</ion-content>

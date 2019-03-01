@@ -7,61 +7,65 @@
 
 
 <ion-content padding style="background: #E8E7E3">
-  <header></header>
+    <header></header>
 
-  <ion-row style="background: white ;border-radius: 29px;" >
-    <ion-col >
-      <img src="../../assets/detilproduit/tel.jpeg" id="img">
-    </ion-col>
+    <ion-row style="background: white ;border-radius: 29px; padding-bottom: 10%;">
+        <ion-col>
+            <img src="{{photo}}" id="img">
+        </ion-col>
 
-    <ion-list >
-      <ion-item >
-        <ion-label >Enseigne</ion-label>
-        <ion-input type="text" ></ion-input>
-      </ion-item>
-    
-      <ion-item>
-        <ion-label fixed>Marque</ion-label>
-        <ion-input type="text" ></ion-input>
-      </ion-item>
+        <ion-list>
+            <ion-item>
+                <ion-label fixed>Enseigne</ion-label>
+                <ion-input [(ngModel)]="enseigne" type="text"></ion-input>
+            </ion-item>
 
-      <ion-item>
-        <ion-label fixed>Priduit</ion-label>
-        <ion-input type="text" ></ion-input>
-      </ion-item>
+            <ion-item>
+                <ion-label fixed>Marque</ion-label>
 
-      <ion-item>
-        <ion-label fixed>Date d'achat</ion-label>
-        <ion-input type="text" ></ion-input>
-      </ion-item>
 
-      <ion-item>
-        <ion-label fixed>Garantie</ion-label>
-        <ion-input type="text" ></ion-input>
-      </ion-item>
-    </ion-list>
+                <ion-select multiple="false" [(ngModel)]="marque">
+                    <ion-option *ngFor=" let item of data; let i=index " [value]="item.libelle" item-end>{{item.libelle}}</ion-option>
+                </ion-select>
+            </ion-item>
 
-    <ion-row>
-        <ion-col  col-6>
-            <button ion-button color="dark" clear icon-start>
+            <ion-item>
+                <ion-label fixed>Produit</ion-label>
+                <ion-input [(ngModel)]="nom" type="text"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label fixed>Date d'achat</ion-label>
+                <ion-datetime pickerFormat="DD MMMM YYYY" monthNames='janvier,février, mars, avril, mai, juin, juillet,août,septembre,octobre,novembre,décembre' displayFormat="DD MMMM YYYY" [(ngModel)]="dachat" ></ion-datetime>
+            </ion-item>
+
+            <ion-item>
+                <ion-label fixed>Garantie</ion-label>
+                <ion-input [(ngModel)]="garantie" type="text"></ion-input>
+            </ion-item>
+        </ion-list>
+
+        <ion-row>
+            <ion-col col-6>
+                <button (click)="takePictureArticle()" ion-button color="dark" clear icon-start>
                 <ion-icon ios="ios-add" color="danger"  >
                 </ion-icon>
                 Modifier Photo
             </button>
-        </ion-col>
+            </ion-col>
 
-        <ion-col  col-6>
-          <button ion-button color="dark" clear icon-start>
+            <ion-col col-6>
+                <button (click)="takePictureFacture()" ion-button color="dark" clear icon-start>
               <ion-icon ios="ios-add" color="danger"  >
               </ion-icon>
               Modifier Facture
           </button>
-        </ion-col>
-        
-         
-            <button ion-button id="btn-valider" round>Valider</button>
-       
+            </ion-col>
 
+
+            <button ion-button id="btn-valider" round (click)=" UploadArticle()">Valider</button>
+
+
+        </ion-row>
     </ion-row>
-  </ion-row>
 </ion-content>
