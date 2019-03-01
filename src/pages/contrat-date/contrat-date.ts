@@ -39,11 +39,11 @@ isRecording = false;
   }
 
   AddPic(){
-    this.navCtrl.push('AjouterContratPage')
+    this.navCtrl.setRoot('AjouterContratPage')
     localStorage.setItem("dateC",this.date)
   }
   Previous(){
-    this.navCtrl.pop()
+    this.navCtrl.setRoot('ContratTypePage')
   }
   startListening() {
     this.speechRecognition.hasPermission()

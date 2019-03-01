@@ -11,24 +11,41 @@
             <ion-label>Type:</ion-label>
             <ion-item>
 
-                    <ion-select multiple="false" [(ngModel)]="type">
-                            <ion-option *ngFor=" let item of cont; let i=index " [value]="item.libelle" item-end>{{item.libelle}}</ion-option>
-                        </ion-select>
-                <img width="8%"  (click)="Edit()" src="assets/imgs/edites.svg" item-end>
+                <ion-select multiple="false" [(ngModel)]="type">
+                    <ion-option *ngFor=" let item of cont; let i=index " [value]="item.libelle" item-end>{{item.libelle}}</ion-option>
+                </ion-select>
+                <img width="8%" (click)="Edit()" src="assets/imgs/edites.svg" item-end>
             </ion-item>
 
             <ion-label>Date d'échéance:</ion-label>
             <ion-item>
 
-                 <ion-datetime pickerFormat="DD MMMM YYYY" monthNames='janvier,février, mars, avril, mai, juin, juillet,août,septembre,octobre,novembre,décembre' displayFormat="DD MMMM YYYY" [(ngModel)]="date" ></ion-datetime>
+                <ion-datetime pickerFormat="DD MMMM YYYY" monthNames='janvier,février, mars, avril, mai, juin, juillet,août,septembre,octobre,novembre,décembre' displayFormat="DD MMMM YYYY" [(ngModel)]="date"></ion-datetime>
                 <img width="8%" (click)="Edit()" src="assets/imgs/edites.svg" item-end>
             </ion-item>
 
             <ion-label>photos:</ion-label>
             <ion-item>
-
-                <ion-input type="text" value="" [disabled]="CantEdit" placeholder="Photo(S) Contrat:"></ion-input>
-                <img width="8%"  (click)="Edit()" src="assets/imgs/edites.svg">
+                <div class="picDiv" *ngIf="image">
+                    <ion-row>
+                        <ion-col style="margin: auto;   padding-left: 16px;">
+                            <p>Photo(S) Contrat</p>
+                        </ion-col>
+                        <ion-col>
+                            <img width="10%" (click)="Edit()" src="assets/imgs/checked.svg">
+                        </ion-col>
+                    </ion-row>
+                </div>
+                <div class="picDiv" *ngIf="!image">
+                    <ion-row>
+                        <ion-col style="margin: auto;   padding-left: 16px;">
+                            <p>Photo(S) Contrat:</p>
+                        </ion-col>
+                        <ion-col>
+                            <img width="10%" (click)="Edit()" src="assets/imgs/x.svg">
+                        </ion-col>
+                    </ion-row>
+                </div>
             </ion-item>
         </div>
 

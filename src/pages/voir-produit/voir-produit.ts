@@ -69,43 +69,43 @@ export class VoirProduitPage {
 
       switch(y[1]) { 
         case "janvier":
-        y[1]="January";
+        y[1]="1";
         break;
     case "février":
-    y[1]="February";
+    y[1]="2";
         break;
     case "mars":
-    y[1]="March";
+    y[1]="3";
         break;
     case "avril":
-    y[1]="April";
+    y[1]="4";
         break;
     case "mai":
-    y[1]="May";
+    y[1]="5";
         break;
     case "juin":
-    y[1]="June";
+    y[1]="6";
         break;
     case "juillet":
-    y[1]="July";
+    y[1]="7";
         break;
     case "août":
-    y[1]="August";
+    y[1]="8";
         break;
     case "septembre":
-    y[1]="September";
+    y[1]="9";
         break;
     case "octobre":
-    y[1]="October";
+    y[1]="10";
         break;
     case "novembre":
-    y[1]="November";
+    y[1]="11";
         break;
     case "décembre":
-    y[1]="December";
+    y[1]="12";
         break;
     }
-     let dat =y[0]+'-'+y[1]+'-'+y[2];
+     let dat =y[2]+'-'+y[1]+'-'+y[0];
 
      this.dachat= moment(dat);
     console.log(this.dachat)
@@ -145,7 +145,7 @@ export class VoirProduitPage {
     return this.cameraProvider.getPictureFromCamera().then(picture => {
       if (picture) {
         this.photo = picture;
-        alert(picture)
+  
       }
       loading.dismiss();
       
@@ -165,7 +165,7 @@ export class VoirProduitPage {
     return this.cameraProvider.getPictureFromCamera().then(picture => {
       if (picture) {
         this.facture = picture;
-        alert(picture)
+        
       }
       loading.dismiss();
     

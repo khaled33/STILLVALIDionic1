@@ -17,7 +17,9 @@
         <ion-list>
             <ion-item>
                 <ion-label>Type de contrat</ion-label>
-                <ion-input [(ngModel)]="type" type="text"></ion-input>
+                <ion-select multiple="false" [(ngModel)]="type">
+                    <ion-option *ngFor=" let item of cont; let i=index " [value]="item.libelle" item-end>{{item.libelle}}</ion-option>
+                </ion-select>
             </ion-item>
 
             <ion-item>

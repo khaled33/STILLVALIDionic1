@@ -82,7 +82,7 @@ date:any;
      loading.dismiss();
   }
 Previous(){
-  this.navCtrl.pop()
+  this.navCtrl.setRoot('ContratDatePage')
 }
 takePicture() {
   const loading = this.loadingCtrl.create();
@@ -113,7 +113,7 @@ getPicture() {
   return this.cameraProvider.getPictureFromPhotoLibrary().then(picture => {
     if (picture) {
       this.chosenPicture = picture;
-      alert(this.chosenPicture)
+      
       this.images.push( this.chosenPicture);
       this.i--;
     }

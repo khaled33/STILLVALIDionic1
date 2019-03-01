@@ -58,7 +58,7 @@ cont:any;
    // this.presentLoading();
   }
   Previous(){
-    this.navCtrl.pop()
+    this.navCtrl.setRoot('AjouterContratPage')
   }
   ionViewDidLoad() {
     this.getNavParamsData()

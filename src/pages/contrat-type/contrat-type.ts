@@ -36,10 +36,10 @@ type:any;
     console.log('ionViewDidLoad ContratTypePage');
   }
   Previous(){
-    this.navCtrl.pop()
+    this.navCtrl.setRoot('ProduitPage')
   }
 Next(){
-  this.navCtrl.push('ContratDatePage')
+  this.navCtrl.setRoot('ContratDatePage')
   localStorage.setItem('type',this.type)
 }
 chooseType(type){

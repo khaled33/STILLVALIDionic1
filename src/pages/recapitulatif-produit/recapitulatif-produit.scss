@@ -17,4 +17,13 @@ page-recapitulatif-produit {
     .select-ios .select-icon {
         visibility: hidden;
     }
+    .text-input-ios {
+        margin: 11px 8px 11px 0;
+        width: calc(100% - 8px);
+        padding-left: 16px;
+    }
+    .picDiv {
+        background-color: #fff;
+        border-radius: 86px;
+    }
 }

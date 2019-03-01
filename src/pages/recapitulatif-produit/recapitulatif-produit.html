@@ -51,9 +51,46 @@
 
             <ion-label>Photos:</ion-label>
             <ion-item>
-
-                <ion-input type="text" value="" [disabled]="CantEdit" placeholder="Photo(S) Produit:" [(ngModel)]="FacturePic"></ion-input>
-                <img width="8%" src="assets/imgs/edites.svg" item-end>
+                <div class="picDiv" *ngIf="ArticlePic">
+                    <ion-row>
+                        <ion-col style="margin: auto;   padding-left: 16px;">
+                            <p>Photo Produit:</p>
+                        </ion-col>
+                        <ion-col>
+                            <img width="10%" src="assets/imgs/checked.svg">
+                        </ion-col>
+                    </ion-row>
+                </div>
+                <div class="picDiv" *ngIf="!ArticlePic">
+                    <ion-row>
+                        <ion-col style="margin: auto;   padding-left: 16px;">
+                            <p>Photo(S) Contrat:</p>
+                        </ion-col>
+                        <ion-col>
+                            <img width="10%" src="assets/imgs/x.svg">
+                        </ion-col>
+                    </ion-row>
+                </div>
+                <div class="picDiv" *ngIf="FacturePic">
+                    <ion-row>
+                        <ion-col style="margin: auto;   padding-left: 16px;">
+                            <p>Photo(S) Contrat</p>
+                        </ion-col>
+                        <ion-col>
+                            <img width="10%" src="assets/imgs/checked.svg">
+                        </ion-col>
+                    </ion-row>
+                </div>
+                <div class="picDiv" *ngIf="!FacturePic">
+                    <ion-row>
+                        <ion-col style="margin: auto;   padding-left: 16px;">
+                            <p>Photo(S) Contrat:</p>
+                        </ion-col>
+                        <ion-col>
+                            <img width="10%" src="assets/imgs/x.svg">
+                        </ion-col>
+                    </ion-row>
+                </div>
             </ion-item>
         </div>
 

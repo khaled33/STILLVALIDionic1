@@ -115,7 +115,7 @@ TestMail(mail){
       let headers = new Headers();
       headers.append('content-type', 'application/json');
 
-      this.http.get("http://13.80.41.22/WebServicePhp/Notifications/sendMail/sendMail.php?email=hamzamlayeh@outlook.com", {headers: headers})
+      this.http.get("http://13.80.41.22/WebServicePhp/Notifications/sendMail/sendMail.php?email=yassinzaghdoudi@gmail.com", {headers: headers})
       .map(res => res.json())
     .subscribe(data => {
    

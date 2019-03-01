@@ -20,7 +20,13 @@ export class VoirContratPage {
   photoC:any;
   type:any;
   id:any;
+  cont:any
   constructor( public modalCtrl:ModalController,public navCtrl: NavController, public navParams: NavParams, public loadingCtrl:LoadingController,private contratProvider:ContratProvider) {
+ 
+    this.contratProvider.getTypes().then(res=>{
+      this.cont=res;
+    
+    });
   }
 
   ionViewDidLoad() {

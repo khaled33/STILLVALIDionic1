@@ -36,7 +36,7 @@ export class ProduitGarantiePage {
     console.log('ionViewDidLoad ProduitGarantiePage');
   }
 Previous(){
-  this.navCtrl.pop();
+  this.navCtrl.setRoot('ProduitDatePage');
 }
 Next(){
   this.navCtrl.push('AjouterProduitPage')
